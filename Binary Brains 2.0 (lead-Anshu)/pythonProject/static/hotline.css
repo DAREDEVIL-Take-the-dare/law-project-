@@ -1,0 +1,215 @@
+/* ------------------Legal Hotline CSS------------ */
+.hotline-banner img {
+  width: 100%;
+}
+.lh-subHeader {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 4rem auto;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+}
+article::before {
+  animation: amit t;
+}
+.article-text {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-left: 3rem;
+  border: #230753 3px dashed;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+.article-text:hover {
+  border: #230753 3px solid;
+}
+.article-text:hover .article-title {
+  color: green;
+  font-weight: 600;
+  transform: scaleX(1.1);
+}
+.article-title {
+  text-align: left;
+  color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+}
+.article-explanation {
+  line-height: 2rem;
+}
+.article-image img {
+  width: 30.875rem;
+  height: 29rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.article-image img:hover {
+  filter: brightness(1.2);
+}
+
+#card-catagory {
+  margin-top: 7rem;
+}
+.catagory-title {
+  text-align: center;
+  background-color: #230753;
+  border-radius: 2rem;
+  color: #f6f6f6;
+  font-size: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  line-height: 1.6em;
+  margin-bottom: 2rem;
+}
+.lh-catagory-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.lh-catagories {
+  margin: 3rem auto 7rem;
+}
+.catagory {
+  display: inline;
+  border-radius: 2.5rem;
+  color: #230753;
+  border: #230753 3px dashed;
+  font-size: 1.1em;
+  padding: 0.8rem;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: all ease 0.01s;
+  cursor: pointer;
+}
+.catagory:hover {
+  background-color: #4c3672;
+  color: white;
+  border: solid;
+}
+
+/* -------------------Lawyer Card Styles----------------- */
+.lh-lawyers {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #d9d9d9;
+
+  justify-content: space-around;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lh-lwRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.lwCard {
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: #03024b;
+  border-radius: 2rem;
+  justify-content: space-around;
+  transition: all ease 0.1s;
+}
+.lwCard:hover {
+  transform: scale(0.95);
+}
+.lwCard:hover .lwName > h3 {
+  color: brown;
+}
+.lwCard:hover .lwExp {
+  color: rgb(206, 114, 114);
+}
+.lwCard:hover .lwOnlineS {
+  color: rgb(30, 204, 82);
+}
+.lwCard:hover .price-tag {
+  color: rgb(30, 204, 82);
+}
+.introRow {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lwImage {
+  display: flex;
+  flex-direction: row;
+}
+.lwImage img {
+  max-width: 7rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+.lwExp p {
+  line-height: 2rem;
+}
+.lwRating p {
+  line-height: 2rem;
+  font-size: 1.5rem;
+  color: #ffb54a;
+}
+
+.introRow span {
+  color: #ffb54a;
+}
+.lwaboutRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.lwExp {
+  display: flex;
+  flex-direction: column;
+}
+.lwRating {
+  display: flex;
+  flex-direction: column;
+}
+.lwDetails {
+  display: flex;
+  flex-direction: row;
+}
+.lwDetails p {
+  color: #ffffff;
+  line-height: 1.7rem;
+}
+.whiteLine {
+  border: 2.5px white solid;
+}
+.price-tag span {
+  font-size: 1.7rem;
+}
+.lwService {
+  display: flex;
+  justify-content: space-between;
+}
+.lwOnlineS {
+  margin-top: 1rem;
+  line-height: 2rem;
+}
+.lwOnlineS div:hover,
+.lwName span {
+  cursor: pointer;
+}

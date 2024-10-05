@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Law Engine</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="static/style.css" />
+    <script src="script.js"></script>
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var chatbotIcon = document.querySelector(".chatbot_image");
+
+        window.onscroll = function () {
+          // Show the chatbot icon when scrolling down
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            chatbotIcon.style.bottom = "50px";
+          } else {
+            // Hide the chatbot icon when at the top of the page
+            chatbotIcon.style.bottom = "-100px";
+          }
+        };
+      });
+    </script>
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+ <script>
+
+	function loadGoogleTranslate()
+
+	{
+
+		new google.translate.TranslateElement({
+            pageLanguage: 'en', // Set the default language
+            autoDisplay: false, // Do not display the default language
+            gaTrack: false, // Disable Google Analytics tracking
+            layout: google.translate.TranslateElement.InlineLayout.Horizontal, // Use inline layout
+            multilanguagePage: true, // Enable multilanguage page
+            includedLanguages: 'en,hi,bn,te,mr,ta,ur,gu,ml,kn,or,pa,as,mai,sat,ne,kok', // Include specific languages
+        }, 'myid');
+
+	}
+</script>
+  </head>
+  <body>
+
+    <div class="div">
+      <div class="div-2">
+        <img
+          loading="lazy"
+          srcset="
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+            https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&
+          "
+          class="img"
+        />
+        <div class="div-3">
+          <div class="div-4"><a href="#">Home</a></div>
+          <div class="div-5"><a href="about">About</a></div>
+          <div class="div-6"><a href="#ourservices ">Services</a></div>
+          <div class="div-7"><a href="update">Updates</a></div>
+          <div class="div-8">
+                    {% if 'user_id' in session %}
+                        {{ username }}
+                    {% else %}
+                        <a href="home" class="active" >Login/SignUp</a>
+                    {% endif %}</div>
+
+<!--            ><img-->
+<!--              loading="lazy"-->
+<!--              srcset="-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,-->
+<!--                https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&-->
+<!--              "-->
+<!--              class="img-2"-->
+<!--            />-->
+
+          <img loading="lazy" style="margin-top:15px;" src="static/user.png" class="img-3" /><div style="float: right; margin-top:10px;align-self: center;" id="myid"></div>
+        </div>
+      </div>
+
+      <div class="div-9">
+        <div class="div-10">
+          <span style="color: rgba(255, 255, 255, 1)">
+            Speak The Truth,
+            <br />
+            Follow The Path
+            <br />
+          </span>
+          <span style="color:white">Of Rightness</span>
+        </div>
+        <div class="div-11" style="color:white">
+          Our platform aims to be the best marketplace for the people to buy
+          legal services online
+          <br />
+        </div>
+        <div class="div-12">
+          <div class="div-13"><a href="tel:+919068268988"
+                          ><i class="fa-solid fa-phone-volume"></i>  Need Help? Call</a
+                      ></div>
+          <div class="div-14"><a href="#ourservices">Our Services</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="div_section2">
+      <div class="div-2_section2">
+        <img
+          loading="lazy"
+          src="static/bac.jpeg"
+          class="img_section2"
+        />
+        <div class="div-3_section2">
+          <div class="div-4_section2">
+            <div class="column_section2">
+              <img loading="lazy" src="static/hand2.png" class="img-2_section2" />
+            </div>
+            <div class="column-2_section2">
+              <div class="div-5_section2">
+                <div class="div-6_section2">What is JANADHIKAR ?</div>
+                <div class="div-7_section2">
+                  <span
+                    style="
+                      font-family: Times New Roman, -apple-system, Roboto, Helvetica,
+                        sans-serif;
+                      font-weight: 700;
+                    "
+                  >
+                    <i>Empowering the pulse of democracy, where every voice
+                      resonates with the rhythm of rights and freedom.</i>
+                    <br />
+                    <br />
+                  </span>
+                  <span
+                    style="
+                      font-family: Calibri, -apple-system, Roboto, Helvetica,
+                        sans-serif;
+                      font-weight: 400;
+                    "
+                  >
+                    It emphasizes the fundamental principles of Justice,
+                    Equality and Empowerment for all members of society</span
+                  >
+                </div>
+                <div class="div-8_section2">
+                  <div class="div-9_section2"><a href="#">Read More</a></div>
+                  <img
+                    loading="lazy"
+                    srcset="
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/87b06ba9f0df7874aea75fec6243b792b85387434b667bf2f2532207d36e132c?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                    "
+                    class="img-3_section2"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="Guiding_Values">
+          <div class="container_section2">
+            <div class="title_section2">
+              <h1>Our Guiding Values</h1>
+            </div>
+            <div class="g_values">
+              <div>
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/4e6031f3768cbd516287ed1a400f2187afa2b8e9bcc84276eef9ac9533d1b64a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100
+                  "
+                  class="img-4_section2"
+                />
+                <div>Reliability</div>
+              </div>
+              <div>
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/3ea768f7b461b48d43af7b33e3b8abfab6e088fcf895db650b9e935282566f28?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100
+                  "
+                  class="img-5_section2"
+                />
+                <div>Customer-focused</div>
+              </div>
+
+              <div>
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1aeb1562e865806827b7d9368a557937e555eb9768ea85095a27be2e7f78e04d?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100
+                  "
+                  class="img-6_section2"
+                />
+                <div>Community</div>
+              </div>
+
+              <div>
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/a48c3d846c2c7b36c4a0fc74a078fd27f8a9ad340eb7558cf3ff4e26d2956c70?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100
+                  "
+                  class="img-7_section2"
+                />
+                <div>Results-oriented</div>
+              </div>
+              <div>
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b52583dab8188e4a707410920e135bd704a5c18991facc55372691492b10fff0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100
+                  "
+                  class="img-8_section2"
+                />
+                <div>Efficiency</div>
+              </div>
+              <div>
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/77517f48611ed9ed03a48fc5fc4183776c67930c34ec0c45c24cebdfb9377712?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100
+                  "
+                  class="img-9_section2"
+                />
+                <div>Mastery</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="section3 " id="ourservices">
+      <div class="heading">
+        <h2>Our Services</h2>
+        <p>Here are the Services we offer</p>
+      </div>
+      <div class="section3_cards  section5b">
+        <a href="image"
+          ><div class="card">
+            <div class="img_div">
+              <img
+                loading="lazy"
+                src="static/01.png"
+                class="img_section3"
+                width="50vh"
+              />
+            </div>
+            <div class="search_by_image">SEARCH BY IMAGE</div>
+            <div class="details">Here is what we offer</div>
+          </div>
+        </a>
+        <a href="hotline"
+          ><div class="card">
+            <div class="img_div">
+              <img
+                loading="lazy"
+                src="static/1.png"
+                class="img_section3"
+                width="50vh"
+              />
+            </div>
+            <div class="search_by_image">LEGAL HOTLINE</div>
+            <div class="details">Here is what we offer</div>
+          </div>
+        </a>
+        <a href="document"
+          ><div class="card">
+            <div class="img_div">
+              <img
+                loading="lazy"
+                src="static/3.png"
+                class="img_section3"
+                width="50vh"
+              />
+            </div>
+            <div class="search_by_image">DOCUMENT</div>
+            <div class="details">Here is what we offer</div>
+          </div>
+        </a>
+        <a href="know_rights">
+          <div class="card">
+            <div class="img_div">
+              <img
+                loading="lazy"
+                src="static/hand.jpg"
+                class="img_section3"
+                width="50vh"
+              />
+            </div>
+            <div class="search_by_image">KNOW YOUR RIGHTS</div>
+            <div class="details">Here is what we offer</div>
+          </div>
+        </a>
+        <a href="chat"
+          ><div class="card">
+            <div class="img_div">
+              <img
+                loading="lazy"
+                src="static/Group 259.png"
+                class="img_section3"
+                width="50vh"
+              />
+            </div>
+            <div class="search_by_image">JANSEVAK</div>
+            <div class="details">Here is what we offer</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="div_section4">
+      <div class="div-2_section4">Know Your Rights</div>
+      <div class="div-3_section4">
+        <div class="div-4_section4">
+          <div class="column_section4">
+            <div class="div-5_section4">
+              <img
+                loading="lazy"
+                srcset="
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/0de5c99e852ed570910010d1a6ab7bcb236b84d5a7f88e63647ab08f45d617e1?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                "
+                class="img_section4"
+              />
+              <div class="div-6_section4">
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1852b3b266eb4538d21c8804843c9f8a936e41dc8c43885194e1f8786dcef0e0?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                  "
+                  class="img-2_section4"
+                />
+                <div class="div-8_section4">Consumers Rights</div>
+                <div class="div-9_section4">
+                  Means right to be protected against the marketing of goods and
+                  services, which are hazardous to life and property. The
+                  purchased goods and services availed of should not only meet
+                  their immediate needs, but also fulfil long term .......
+                </div>
+                <div class="div-10_section4"><a href="#">Read More</a></div>
+              </div>
+              <div class="div-11_section4">
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/b99edc1f1ee9e8ef0340f3b4f7ee2f96383a18cabccb8cbc4f26e0cab9f02287?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                  "
+                  class="img-3_section4"
+                />
+                <div class="div-13_section4">Educational Rights</div>
+                <div class="div-14_section4">
+                  Means right to be protected against the marketing of goods and
+                  services, which are hazardous to life and property. The
+                  purchased goods and services availed of should not only meet
+                  their immediate needs, but also fulfil long term ........
+                </div>
+                <div class="div-15_section4"><a href="#">Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="column-2_section4">
+            <div class="div-16_section4">
+              <div class="div-17_section4">
+                <img
+                  loading="lazy"
+                  srcset="
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                    https://cdn.builder.io/api/v1/image/assets/TEMP/1a408a71bb35437d641586d9d5c929cc71eb18c4985538199eae6ee0188eb120?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                  "
+                  class="img-4_section4"
+                />
+                <div class="div-19_section4">Property Laws</div>
+                <div class="div-20_section4">
+                  Means right to be protected against the marketing of goods and
+                  services, which are hazardous to life and property. The
+                  purchased goods and services availed of should not only meet
+                  their immediate needs, but also fulfil long term ........
+                </div>
+                <div class="div-21_section4"><a href="#">Read More</a></div>
+              </div>
+              <img
+                loading="lazy"
+                srcset="
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/25ba7f24f1477ed07ed5f22dd281c001aee79c4f45499e1c390d520bf46b6478?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                "
+                class="img_section4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4de97fa73813a0a991d6e7eb0c41450424e28df32afc17a16e7518fdc68ae388?apiKey=30447c5731e24690ba2b28b2e2481b13&"
+        class="img-5_section4"
+      />
+      <div class="div-22_section4">
+        <a href="learn" class="learn_with_us">
+          <div class="div-23_section4">Learn With Us</div>
+          <img
+            loading="lazy"
+            srcset="
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/0884b88c6497baeaea31954e69fbf77be66694f60fce6ee336982259ef4a34e0?apiKey=30447c5731e24690ba2b28b2e2481b13&
+            "
+            class="img-6_section4"
+        /></a>
+      </div>
+    </div>
+    <div class="div_section5">
+      <div class="div-2_section5">
+        <div class="column_section5">
+          <div class="div-3_section5">
+            25k+
+            <br />
+            Professional Service Providers
+          </div>
+        </div>
+        <div class="column-2_section5">
+          <div class="div-4_section5">
+            50000+
+            <br />
+            Clients Trust LEGALTECH
+          </div>
+        </div>
+        <div class="column-3_section5">
+          <div class="div-5_section5">
+            1Lac+
+            <br />
+            Client Served
+          </div>
+        </div>
+        <div class="column-4_section5">
+          <div class="div-6_section5">
+            4.9/5
+            <br />
+            Average Rating
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section3 section5a">
+      <div class="section3_cards">
+        <a href="#"
+          ><div class="card">
+            <div class="img_div img_divsection5a">
+              <img
+                loading="lazy"
+                src="https://kanoongurus.com/public/lawyers_avatar/1690285382_lawyer-profile.png"
+                class="img_section3"
+                width="70vh"
+              />
+            </div>
+            <div style="margin: auto">4.8/5</div>
+            <div class="search_by_image">Paresh M Modi</div>
+            <div class="details">Civil, Criminal, Cyber Crime, Banking</div>
+          </div>
+        </a>
+        <a href="#"
+          ><div class="card">
+            <div class="img_div img_divsection5a">
+              <img
+                loading="lazy"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5chcZ9piEfoNyqy3ZVAPszDrgBXs9oQ6S4Q&usqp=CAU"
+                class="img_section3"
+                width="70vh"
+              />
+            </div>
+            <div style="margin: auto">4.5/5</div>
+            <div class="search_by_image">Ranjeev Ranjan</div>
+            <div class="details">Civil, Criminal, Cyber Crime, Banking</div>
+          </div>
+        </a>
+        <a href="#"
+          ><div class="card">
+            <div class="img_div img_divsection5a">
+              <img
+                loading="lazy"
+                src="https://media.chambers.com/individuals/3114515/b10def14-a017-4b74-80a2-98c23a80a4eb/profile.png"
+                class="img_section3"
+                width="70vh"
+              />
+            </div>
+            <div style="margin: auto">4.6/5</div>
+            <div class="search_by_image">Sachit Jolly</div>
+            <div class="details">Civil, Criminal, Cyber Crime, Banking</div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <div class="img_div img_divsection5a">
+              <img
+                loading="lazy"
+                src="https://sdsadvocates.com/wp-content/uploads/2019/03/Sachiv-Kumar-Profile.png"
+                class="img_section3"
+                width="70vh"
+              />
+            </div>
+            <div style="margin: auto">4.3/5</div>
+            <div class="search_by_image">Sachiv Kumar</div>
+            <div class="details">Civil, Criminal, Cyber Crime, Banking</div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <div class="img_div img_divsection5a">
+              <img
+                loading="lazy"
+                src="https://sdsadvocates.com/wp-content/uploads/2019/03/Sachiv-Kumar-Profile.png"
+                class="img_section3"
+                width="70vh"
+              />
+            </div>
+            <div style="margin: auto">4.3/5</div>
+            <div class="search_by_image">Sachiv Kumar</div>
+            <div class="details">Civil, Criminal, Cyber Crime, Banking</div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <div class="img_div img_divsection5a">
+              <img
+                loading="lazy"
+                src="https://sdsadvocates.com/wp-content/uploads/2019/03/Sachiv-Kumar-Profile.png"
+                class="img_section3"
+                width="70vh"
+              />
+            </div>
+            <div style="margin: auto">4.3/5</div>
+            <div class="search_by_image">Sachiv Kumar</div>
+            <div class="details">Civil, Criminal, Cyber Crime, Banking</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="div_section6">
+      <div class="div-2_section6">
+        <div class="div-3_section6">
+          <div class="column_section6">
+            <img
+              loading="lazy"
+              srcset="
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                https://cdn.builder.io/api/v1/image/assets/TEMP/7e3f11cf26658256c8e8e5a5651e107854a31beee06a6c314e7f2b303399ab75?apiKey=30447c5731e24690ba2b28b2e2481b13&
+              "
+              class="img_section6"
+            />
+          </div>
+          <div class="column-2_section6">
+            <div class="div-4_section6">
+              <div class="div-5_section6">
+                <div class="column-3_section6">
+                  <div class="div-6_section6">
+                    <div class="div-7_section6">Legal Hotline</div>
+                    <div class="div-8_section6">
+                      Get yourself guided by live legal advisors
+                    </div>
+                    <div class="div-9_section6"><a href="hotline" style="text-decoration: none"> Start Now</a></div>
+                  </div>
+                </div>
+                <div class="column-4_section6">
+                  <img
+                    loading="lazy"
+                    srcset="
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                      https://cdn.builder.io/api/v1/image/assets/TEMP/bc6f40f1c9ce8d8508ff533499094e6c48cd9ea295881386183600246d6b658a?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                    "
+                    class="img-2_section6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-10_section6">
+        <div class="div-11_section6">
+          <div class="column-5_section6">
+            <div class="div-12_section6">
+              <img
+                loading="lazy"
+                srcset="
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                "
+                class="img-3_section6"
+              />
+              <div class="div-13_section6">
+                <div class="div-14_section6">copyright</div>
+                <div class="div-15_section6">&#169;</div>
+                <div class="div-16_section6">2020 | JANADHIKAR</div>
+              </div>
+            </div>
+          </div>
+          <div class="column-6_section6">
+            <div class="div-17_section6">
+              Privacy Policy
+              <br />
+              Do not sell my personal info
+              <br />
+              Terms of Service
+              <br />
+              janadhikar.com Site Map
+            </div>
+          </div>
+          <div class="column-7_section6">
+
+            <div class="div-18_section6">
+
+ <div class="chatbot">
+          <a href="chat" ><img
+            src="static/bot.png"
+            alt="image"
+            class="chatbot_image"
+            width="100vw"
+            style="border-radius:60%;"
+          /></a>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

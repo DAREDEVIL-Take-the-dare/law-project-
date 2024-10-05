@@ -1,0 +1,381 @@
+.updiv {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .updiv {
+    flex-direction: column;
+
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+
+.upcolumn {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 51%;
+  margin-left: 0px;
+}
+
+@media (max-width: 991px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.updiv-2 {
+  background-color: #03024b;
+  display: flex;
+  flex-direction: column;
+  width: 36rem;
+  padding: 31px 12px 50px 0;
+}
+
+@media (max-width: 991px) {
+  .updiv-2 {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.img {
+  aspect-ratio: 1.71;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 991px) {
+  .img {
+    max-width: 100%;
+  }
+}
+
+.upcolumn-2 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 49%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .upcolumn-2 {
+    width: 100%;
+  }
+}
+
+.updiv-3 {
+  display: flex;
+  margin-top: 33px;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+@media (max-width: 991px) {
+  .updiv-3 {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.updiv-4 {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .updiv-4 {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+.updiv-5 {
+  color: #03024b;
+  letter-spacing: 0.28px;
+  font: 600 14px/210% Poppins, sans-serif;
+}
+
+.updiv-6 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.updiv-6 img {
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .updiv-6 {
+    justify-content: center;
+  }
+}
+
+.img-2 {
+  aspect-ratio: 1.13;
+  object-fit: contain;
+  object-position: center;
+  width: 18px;
+  fill: var(--Text, #2a2a2a);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.img-3 {
+  aspect-ratio: 0.81;
+  object-fit: contain;
+  object-position: center;
+  width: 13px;
+  fill: var(--Text, #2a2a2a);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.img-4 {
+  aspect-ratio: 0.63;
+  object-fit: contain;
+  object-position: center;
+  width: 10px;
+  fill: var(--Text, #2a2a2a);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.updiv-7 {
+  color: var(--Text, #2a2a2a);
+  margin-top: 24px;
+  font: 600 35px Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .updiv-7 {
+    max-width: 100%;
+  }
+}
+
+.updiv-8 {
+  color: var(--Text, #2a2a2a);
+  margin-top: 86px;
+  font: 400 18px/30px Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .updiv-8 {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.updiv-9 {
+  color: var(--Text, #2a2a2a);
+  margin-top: 19px;
+  font: 400 13px/165% Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .updiv-9 {
+    max-width: 100%;
+  }
+}
+.upTitle {
+  display: flex;
+  background-color: #03024b;
+  padding: 1.5rem 0;
+  margin: 2.5rem 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+}
+.NewsTitle {
+  display: inline-block;
+  background-color: white;
+  font-size: 2rem;
+  margin: 0 3erm;
+  color: black;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  margin-left: 2rem;
+}
+
+.upmarquee {
+  display: flex;
+}
+.upmarquee p {
+  cursor: pointer;
+  color: rgb(237, 101, 89);
+}
+.upmarquee p:first-child {
+  cursor: pointer;
+  color: rgb(252, 252, 2);
+}
+
+.upbelowP {
+  display: flex;
+  flex-direction: row;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.3rem;
+  gap: 3rem;
+}
+.upsubTitile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 85%;
+}
+.upOptiobs {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+.upLive {
+  display: flex;
+  gap: 1rem;
+}
+.upLive div {
+  align-self: flex-end;
+}
+.upCards {
+  display: flex;
+  flex-direction: row;
+  min-width: 60%;
+  padding-left: 2rem;
+}
+.newsCards {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 2rem;
+  max-width: 70%;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: left;
+}
+.newsCard {
+  width: 40%;
+  overflow: hidden;
+  box-shadow: 5px 5px #888888;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+.newsCardsTitle {
+  color: var(--Text, #2a2a2a);
+  font-family: Poppins;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.6875rem; /* 150% */
+}
+.newsCardDisc {
+  color: var(--Text, #2a2a2a);
+  font-family: Poppins;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375rem; /* 146.667% */
+}
+.upRating {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.upUser p {
+  margin-top: 3rem;
+  color: var(--Text, #2a2a2a);
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165%; /* 1.34063rem */
+}
+.upUser span {
+  color: var(--Text, #2a2a2a);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 165%; /* 1.34063rem */
+  margin-right: 2rem;
+}
+.upLiveV {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin-top: 1.5rem;
+}
+.upLocBased {
+  margin-top: 4rem;
+  font-size: 1.5rem;
+}
+.upViewM {
+  border: 2px #03024b dashed;
+  font-size: 2rem;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  margin-top: 2.5rem;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  transition: all ease 0.1s;
+}
+.upViewM:hover {
+  background-color: #03024b;
+  color: white;
+}
+.ECcards {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.EdCardRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ECcard {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 40%;
+}
+.EdTitle {
+  color: var(--Text, #2a2a2a);
+  font-family: Poppins;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+.upDescrip {
+  color: var(--Text, #2a2a2a);
+  font-family: IBM Plex Serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6875rem; /* 150% */
+}
+.upDescrip p {
+  color: var(--Text, #2a2a2a);
+  font-family: Nunito Sans;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 163.41%; /* 1.63413rem */
+}

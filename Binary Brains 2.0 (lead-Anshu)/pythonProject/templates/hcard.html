@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal_Hotline</title>
+    <style>
+              }
+      html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.div-2 {
+  /* z-index: 1; */
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .div-2 {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+.img {
+  aspect-ratio: 2.21;
+  object-fit: contain;
+  object-position: center;
+  width: 228px;
+  overflow: hidden;
+  max-width: 100%;
+}
+.div-3 {
+  align-self: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin: auto 0;
+  padding: 0 20px;
+}
+@media (max-width: 991px) {
+  .div-3 {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.div-4 {
+  text-align: center;
+  align-self: center;
+  flex-grow: 1;
+  white-space: nowrap;
+  margin: auto 0;
+  font: 600 16px Poppins, sans-serif;
+}
+.div-4 > a[href] {
+  padding: 1vh 1vw 1vh 1vw;
+  color: black;
+  text-decoration: none;
+}
+.div-4 > a[href]:hover {
+  border-radius: 10px;
+  background-color: #230753;
+  color: white;
+}
+@media (max-width: 991px) {
+  .div-4 {
+    white-space: initial;
+  }
+}
+.div-5 {
+  color: #000;
+  text-align: center;
+  align-self: center;
+  margin: auto 0;
+  font: 600 16px Poppins, sans-serif;
+}
+.div-5 > a[href] {
+  padding: 1vh 1vw 1vh 1vw;
+  color: black;
+  text-decoration: none;
+}
+.div-5 > a[href]:hover {
+  border-radius: 10px;
+  background-color: #230753;
+  color: white;
+}
+.div-6 {
+  color: #000;
+  text-align: center;
+  align-self: center;
+  margin: auto 0;
+  font: 600 16px Poppins, sans-serif;
+}
+.div-6 > a[href] {
+  padding: 1vh 1vw 1vh 1vw;
+  color: black;
+  text-decoration: none;
+}
+.div-6 > a[href]:hover {
+  border-radius: 10px;
+  background-color: #230753;
+  color: white;
+}
+.div-7 {
+  color: #000;
+  text-align: center;
+  align-self: center;
+  margin: auto 0;
+  font: 600 16px Poppins, sans-serif;
+}
+.div-7 > a[href] {
+  padding: 1vh 1vw 1vh 1vw;
+  color: black;
+  text-decoration: none;
+}
+.div-7 > a[href]:hover {
+  border-radius: 10px;
+  background-color: #230753;
+  color: white;
+}
+.div-8 {
+  color: #000;
+  text-align: center;
+  margin: auto 0;
+  font: 600 16px Poppins, sans-serif;
+}
+.div-8 > a[href] {
+  padding: 1vh 1vw 1vh 1vw;
+  color: black;
+  text-decoration: none;
+}
+.div-8 > a[href]:hover {
+  border-radius: 10px;
+  background-color: #230753;
+  color: white;
+}
+.img-2 {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 32px;
+  overflow: hidden;
+  align-self: stretch;
+  max-width: 100%;
+}
+.img-3 {
+  aspect-ratio: 1.07;
+  object-fit: contain;
+  object-position: center;
+  width: 31px;
+  overflow: hidden;
+  align-self: start;
+  max-width: 100%;
+}
+.details_lawyer{
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+    margin-top: 8vh;
+    flex-wrap: wrap-reverse;
+}
+@media (max-width: 991px){
+    .details_lawyer{
+        gap: 10vh;
+    }
+}
+.card_about_lawyer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+@media (max-width: 991px){
+    .card_about_lawyer{
+        width: 100%;
+    }
+}
+.image_lawyer{
+    width: 50%;
+}
+@media (max-width: 991px){
+    .image_lawyer{
+        width: 100%;
+    }
+}
+.lawyer_card{
+    background-color: #230753;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.lawyer_card1{
+    height: 55%;
+    width: 100%;
+    padding: 2vh;
+    border-bottom: 1px white solid;
+    display: flex;
+    justify-content: space-evenly;
+}
+.lawyer_card1 img{
+    border-radius: 50%;
+}
+.lawyer_card1b{
+    color: white;
+}
+.lawyer_card1b h3{
+    margin: 0;
+    font-weight: 800;
+    font-size: 3.5vh;
+}
+.lawyer_card1b p{
+    margin-top: 4vh;
+    margin: 0;
+    color: rgb(236, 156, 8);
+    font-weight: 700;
+    font-size: 3vh;
+}
+.lawyer_card1c p{
+    margin: 0;
+    margin-top: 0.5vh;
+    color: white;
+    font-size: 2vh;
+}
+
+.lawyer_card1d p{
+    margin: 0;
+    color: rgb(236, 156, 8);
+    font-size: 2vh;
+}
+.lawyer_card2{
+    display: flex;
+    align-items: center;
+    padding-left: 4vh;
+    padding-right: 4vh;
+    color: white;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+.lawyer_card2 a[href]{
+    color: #230753;
+    background-color: white;
+    padding: 0.3vh 1vw 0.3vh 1vw;
+    text-decoration: none;
+    font-size: 2vh;
+    border-radius: 20px;
+}
+.lawyer_card2 span{
+    margin-top: auto;
+}
+.aboutMe{
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    padding: 6vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    border: 2px solid #230753;
+    border-radius: 20px;
+}
+.aboutMe h2{
+    font-family: Poppins;
+    font-size: 5vh;
+    margin: 0;
+    color: #230753;
+    font-weight: 800;
+}
+.aboutMe p{
+    font-family: Poppins;
+    font-size: 3vh;
+    text-align:justify;
+}
+.aboutMe>a[href]{
+    color: white;
+    text-decoration: none;
+    margin-top: 10vh;
+    background-color: #230753;
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 20px;
+}
+.image_lawyer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image_lawyer img{
+    box-shadow: 20px 20px 5px 0 #230753;
+}
+.div-2_section6 {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .div-2_section6 {
+    max-width: 100%;
+  }
+}
+.div-3_section6 {
+  gap: 20px;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .div-3_section6 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+.column_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 43%;
+  margin-left: 0px;
+}
+@media (max-width: 991px) {
+  .column_section6 {
+    width: 100%;
+  }
+}
+.img_section6 {
+  aspect-ratio: 0.87;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  overflow: hidden;
+  flex-grow: 1;
+}
+@media (max-width: 991px) {
+  .img_section6 {
+    max-width: 100%;
+  }
+}
+.column-2_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 57%;
+  margin-left: 20px;
+}
+@media (max-width: 991px) {
+  .column-2_section6 {
+    width: 100%;
+  }
+}
+.div-4_section6 {
+  border-radius: 20px 20px 20px 0px;
+  background-color: #230753;
+  margin-top: 139px;
+  flex-grow: 1;
+  width: 100%;
+  padding: 28px 40px 50px;
+}
+@media (max-width: 991px) {
+  .div-4_section6 {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+}
+.div-5_section6 {
+  gap: 20px;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .div-5_section6 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+.column-3_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 83%;
+  margin-left: 0px;
+}
+@media (max-width: 991px) {
+  .column-3_section6 {
+    width: 100%;
+  }
+}
+.div-6_section6 {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+@media (max-width: 991px) {
+  .div-6_section6 {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+.div-7_section6 {
+  color: #fff;
+  font: 500 56px Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-7_section6 {
+    max-width: 100%;
+    font-size: 40px;
+  }
+}
+.div-8_section6 {
+  color: #fff;
+  margin-top: 45px;
+  font: 400 32px Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-8_section6 {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+.div-9_section6 {
+  color: #03024b;
+  border-radius: 40px;
+  background-color: #fff;
+  margin-top: 56px;
+  justify-content: center;
+  padding: 24px 58px;
+  font: 500 32px Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-9_section6 {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+}
+.column-4_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 17%;
+  margin-left: 20px;
+}
+@media (max-width: 991px) {
+  .column-4_section6 {
+    width: 100%;
+  }
+}
+.img-2_section6 {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 87px;
+  overflow: hidden;
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  .img-2_section6 {
+    margin-top: 40px;
+  }
+}
+.div-10_section6 {
+  background-color: #1a1250;
+  align-self: stretch;
+  margin-top: 99px;
+  width: 100%;
+  padding: 48px 80px 48px 58px;
+}
+@media (max-width: 991px) {
+  .div-10_section6 {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+}
+.div-11_section6 {
+  gap: 20px;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .div-11_section6 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+.column-5_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 30%;
+  margin-left: 0px;
+}
+@media (max-width: 991px) {
+  .column-5_section6 {
+    width: 100%;
+  }
+}
+.div-12_section6 {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 991px) {
+  .div-12_section6 {
+    margin-top: 40px;
+  }
+}
+.img-3_section6 {
+  aspect-ratio: 2.22;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  overflow: hidden;
+}
+.div-13_section6 {
+  align-self: start;
+  display: flex;
+  margin-left: 15px;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 991px) {
+  .div-13_section6 {
+    margin-left: 10px;
+    justify-content: center;
+  }
+}
+.div-14_section6 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.24px;
+  white-space: nowrap;
+  font: 400 12px/210% Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-14_section6 {
+    white-space: initial;
+  }
+}
+.div-15_section6 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.26px;
+  font: 400 13px FontAwesome, sans-serif;
+}
+.div-16_section6 {
+  color: #fff;
+  letter-spacing: 0.24px;
+  flex-grow: 1;
+  white-space: nowrap;
+  font: 400 12px/210% Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-16_section6 {
+    white-space: initial;
+  }
+}
+.column-6_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 35%;
+  margin-left: 20px;
+}
+@media (max-width: 991px) {
+  .column-6_section6 {
+    width: 100%;
+  }
+}
+.div-17_section6 {
+  color: #fff;
+  letter-spacing: 0.3px;
+  margin: auto 0;
+  font: 500 15px/32px Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-17_section6 {
+    margin-top: 40px;
+  }
+}
+.column-7_section6 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 34%;
+  margin-left: 20px;
+}
+@media (max-width: 991px) {
+  .column-7_section6 {
+    width: 100%;
+  }
+}
+.div-18_section6 {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+@media (max-width: 991px) {
+  .div-18_section6 {
+    margin-top: 40px;
+  }
+}
+.div-19_section6 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  font: 500 15px/210% Poppins, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-19_section6 {
+    white-space: initial;
+  }
+}
+.img-4_section6 {
+  aspect-ratio: 9.14;
+  object-fit: contain;
+  object-position: center;
+  width: 256px;
+  overflow: hidden;
+  align-self: start;
+  margin-top: 68px;
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  .img-4_section6 {
+    margin-top: 40px;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="div">
+        <div class="div-2">
+          <img
+            loading="lazy"
+            srcset="
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+              https://cdn.builder.io/api/v1/image/assets/TEMP/b8dd754cda2957a620e670bf29bd6f714137a0b8bb76ebbd073bb1f190083ffb?apiKey=30447c5731e24690ba2b28b2e2481b13&
+            "
+            class="img"
+          />
+          <div class="div-3">
+            <div class="div-4"><a href="/">Home</a></div>
+            <div class="div-5"><a href="about">About</a></div>
+            <div class="div-6"><a href="#">Services</a></div>
+            <div class="div-7"><a href="hotline">Legal Hotline</a></div>
+            <div class="div-8"><a href="login">Login/Signup</a></div>
+            <a href=""
+              ><img
+                loading="lazy"
+                srcset="
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                  https://cdn.builder.io/api/v1/image/assets/TEMP/e2bbd96ad2061cf81d742c703a85996d4a9a36072d57518ef37abc85ad64725c?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                "
+                class="img-2"
+              />
+            </a>
+            <img loading="lazy" src="static/user.png" class="img-3" />
+          </div>
+        </div>
+        <div>
+            <img src="static/Header_Banner.png" alt="image" width="100%"/>
+        </div>
+        <div class="details_lawyer">
+          <div class="card_about_lawyer">
+            <div class="lawyer_card">
+                 <div class="lawyer_card1">
+                    <div><img src="static/civilL1.jpeg" width="50vw" alt="img"/></div>
+                    <div class="lawyer_card1b"><h3>Adv Uday Mishra</h3><p>@udayamishra</p></div>
+                    <div class="lawyer_card1c"><p>Ghaziabad U.P.</p><p>8+ years of experience</p><p>Hindi,English ...4 more</p></div>
+                    <div class="lawyer_card1d"><p>4.5/5</p><p>285 cases</p></div>
+                 </div>
+                 <div class="lawyer_card2">
+                    <span>&#8377;30/per min call</span><span><a href="#">Call</a> <a href="#">Internet Call</a></span>
+                 </div>
+            </div>
+            <div class="aboutMe"><h2>About Me</h2>
+                <p>It seems like your question  might be a bit unclear. If you're  referring to someone having 15 years of experience in a particular field, it typically implies a high  level of expertise and knowledge. However, without specific context, it's challenging to provide a detailed  response. If you're asking about a professional with 15 years of experience  in a specific domain, industry, or technology, they would likely be considered a seasoned expert.</p>
+                <a href="#">Book an appointment</a>
+            </div>
+          </div>
+          <div class="image_lawyer">
+            <div class="rectangle"></div>
+            <img src="static/civilL1.jpeg" alt="img" width="55%"/>
+          </div>
+        </div>
+        <div class="div-2_section6">
+            <div class="div-10_section6">
+              <div class="div-11_section6">
+                <div class="column-5_section6">
+                  <div class="div-12_section6">
+                    <img
+                      loading="lazy"
+                      srcset="
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=100   100w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=200   200w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=400   400w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=800   800w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1200 1200w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=1600 1600w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&width=2000 2000w,
+                        https://cdn.builder.io/api/v1/image/assets/TEMP/71b5781def30e09059a0679d0ee339ea439e37538befc453b6300de59aac2488?apiKey=30447c5731e24690ba2b28b2e2481b13&
+                      "
+                      class="img-3_section6"
+                    />
+                    <div class="div-13_section6">
+                      <div class="div-14_section6">copyright</div>
+                      <div class="div-15_section6">&#169;</div>
+                      <div class="div-16_section6">2020 | JANADHIKAR</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column-6_section6">
+                  <div class="div-17_section6">
+                    Privacy Policy
+                    <br />
+                    Do not sell my personal info
+                    <br />
+                    Terms of Service
+                    <br />
+                    janadhikar.com Site Map
+                  </div>
+                </div>
+                <div class="column-7_section6">
+                  <div class="div-18_section6">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/78bd15953bc8d7f9efd0f47142a63d2d8d753114773bd80a4f0b363405140fa8?apiKey=30447c5731e24690ba2b28b2e2481b13&"
+                      class="img-4_section6"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div></div>
+</body>
+</html>
