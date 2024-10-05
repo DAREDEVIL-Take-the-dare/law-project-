@@ -23,7 +23,7 @@ DB = mysql.connector.connect(
 cursor = DB.cursor()
 app.secret_key = os.urandom(24)
 
-openai.api_key = "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"
+#openai.api_key = "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"
 
 # Store conversation history
 conversation = []
